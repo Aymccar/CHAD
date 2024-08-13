@@ -1,0 +1,3 @@
+[submodule "ardupilot_custom"]
+	path = ardupilot_custom
+	url = git@github.com-aymer:Aymccar/ardupilot_custom.git
