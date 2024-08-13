@@ -1,3 +1,6 @@
 [submodule "ardupilot_custom"]
 	path = ardupilot_custom
 	url = git@github.com-aymer:Aymccar/ardupilot_custom.git
+[submodule "OF/cpp/cpp-httplib"]
+	path = OF/cpp/cpp-httplib
+	url = git@github.com:yhirose/cpp-httplib.git

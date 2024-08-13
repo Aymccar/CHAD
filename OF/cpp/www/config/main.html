@@ -1,0 +1,42 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" type=text/css href="config/style.css"/>
+</head>
+<body>
+	<div id="Main"></div>
+<script>
+    const values = REPLACE_ME
+    const main = document.getElementById("Main");
+
+    for (let key in values){
+	let div = document.createElement("div");
+	div.className = "container";
+	let label = document.createElement("label");
+	label.for = key;
+	label.innerHTML = key;
+	div.appendChild(label);
+	let button = document.createElement("input");
+	button.type = 'number';
+	button.id = key;
+	button.min = 0;
+	button.value = values[key];
+		    button.onchange = function(){send_val(this.id, this.value)};
+	div.appendChild(button);
+	main.appendChild(div);
+    }
+</script>
+
+<script>
+    function send_val(id, value){
+        axios.post("http://localhost:8080/config", json = {id: id, val: value})
+            .then(response => {console.log(id, i)})
+            .catch(err => {console.log(err)});
+    };
+</script>
+
+</body>
+</html>
+

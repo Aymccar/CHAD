@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+<button id='refresh_button'>
+    Refresh reference
+</button>
+
+<script>
+    const refresh_button = document.querySelector('#refresh_button');
+
+    refresh_button.onclick = e => {
+        axios.post("http://localhost:8080/new_ref")
+            .then(response => {console.log("okay")})
+            .catch(err => {console.log("error")});
+    };
+</script>
+
+</body>
+</html>
+
